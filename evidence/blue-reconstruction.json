@@ -1,0 +1,693 @@
+{
+  "source": "hue-blauw-berichtdelen.json",
+  "classification": "short high=0,long high=1 is a convention, not verified device encoding",
+  "body_word_80": "00000000000000000010010111010110011110110101010000000000000000000000010000111010",
+  "body_as_five_16_bit_groups": [
+    "0x0",
+    "0x25d6",
+    "0x7b54",
+    "0x0",
+    "0x43a"
+  ],
+  "alignment_note": "Assumes first complete rising pulse in zero-offset snapshot is symbol1. Symbol0 inferred from body periodicity; not completely recorded. Absolute indices then chosen by nominal1.25us timing plus unique80symbol cyclic phase. Separate transmissions assumed constant, checked via overlapping symbols.",
+  "assigned_symbol_range": [
+    1,
+    6447
+  ],
+  "overlap_conflicts": {},
+  "first_mismatches_to_body": [
+    6406,
+    6407,
+    6409,
+    6410,
+    6411,
+    6413,
+    6415,
+    6416,
+    6417,
+    6418,
+    6419,
+    6422,
+    6424,
+    6428,
+    6438,
+    6439,
+    6441,
+    6443,
+    6444,
+    6445
+  ],
+  "candidate_footer_from_symbol6400": "000000110111010111010111010111100111100000001000",
+  "candidate_footer_hex": "0x375d75e7808",
+  "footer_boundary_note": "6400is a candidate boundary suggested by80 repeated80symbol units and waveform change around8000us. Not an identified protocol field boundary.",
+  "positions": [
+    {
+      "offset_us": 0,
+      "repeat": 0,
+      "first_assigned_symbol": 1,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 0,
+      "repeat": 1,
+      "first_assigned_symbol": 1,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 150,
+      "repeat": 0,
+      "first_assigned_symbol": 121,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 150,
+      "repeat": 1,
+      "first_assigned_symbol": 121,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 300,
+      "repeat": 0,
+      "first_assigned_symbol": 241,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 300,
+      "repeat": 1,
+      "first_assigned_symbol": 241,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 450,
+      "repeat": 0,
+      "first_assigned_symbol": 361,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 450,
+      "repeat": 1,
+      "first_assigned_symbol": 361,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 600,
+      "repeat": 0,
+      "first_assigned_symbol": 481,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 600,
+      "repeat": 1,
+      "first_assigned_symbol": 481,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 750,
+      "repeat": 0,
+      "first_assigned_symbol": 601,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 750,
+      "repeat": 1,
+      "first_assigned_symbol": 601,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 900,
+      "repeat": 0,
+      "first_assigned_symbol": 721,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 900,
+      "repeat": 1,
+      "first_assigned_symbol": 721,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 1050,
+      "repeat": 0,
+      "first_assigned_symbol": 841,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 1050,
+      "repeat": 1,
+      "first_assigned_symbol": 841,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 1200,
+      "repeat": 0,
+      "first_assigned_symbol": 961,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 1200,
+      "repeat": 1,
+      "first_assigned_symbol": 961,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 1350,
+      "repeat": 0,
+      "first_assigned_symbol": 1081,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 1350,
+      "repeat": 1,
+      "first_assigned_symbol": 1081,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 1500,
+      "repeat": 0,
+      "first_assigned_symbol": 1201,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 1500,
+      "repeat": 1,
+      "first_assigned_symbol": 1201,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 1650,
+      "repeat": 0,
+      "first_assigned_symbol": 1321,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 1650,
+      "repeat": 1,
+      "first_assigned_symbol": 1321,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 1800,
+      "repeat": 0,
+      "first_assigned_symbol": 1441,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 1800,
+      "repeat": 1,
+      "first_assigned_symbol": 1441,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 1950,
+      "repeat": 0,
+      "first_assigned_symbol": 1561,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 1950,
+      "repeat": 1,
+      "first_assigned_symbol": 1561,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 2100,
+      "repeat": 0,
+      "first_assigned_symbol": 1681,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 2100,
+      "repeat": 1,
+      "first_assigned_symbol": 1681,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 2250,
+      "repeat": 0,
+      "first_assigned_symbol": 1801,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 2250,
+      "repeat": 1,
+      "first_assigned_symbol": 1801,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 2400,
+      "repeat": 0,
+      "first_assigned_symbol": 1920,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 2400,
+      "repeat": 1,
+      "first_assigned_symbol": 1920,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 2550,
+      "repeat": 0,
+      "first_assigned_symbol": 2041,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 2550,
+      "repeat": 1,
+      "first_assigned_symbol": 2041,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 2700,
+      "repeat": 0,
+      "first_assigned_symbol": 2161,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 2700,
+      "repeat": 1,
+      "first_assigned_symbol": 2160,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 2850,
+      "repeat": 0,
+      "first_assigned_symbol": 2281,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 2850,
+      "repeat": 1,
+      "first_assigned_symbol": 2281,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 3000,
+      "repeat": 0,
+      "first_assigned_symbol": 2401,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 3000,
+      "repeat": 1,
+      "first_assigned_symbol": 2401,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 3150,
+      "repeat": 0,
+      "first_assigned_symbol": 2521,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 3150,
+      "repeat": 1,
+      "first_assigned_symbol": 2521,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 3300,
+      "repeat": 0,
+      "first_assigned_symbol": 2641,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 3300,
+      "repeat": 1,
+      "first_assigned_symbol": 2641,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 3450,
+      "repeat": 0,
+      "first_assigned_symbol": 2760,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 3450,
+      "repeat": 1,
+      "first_assigned_symbol": 2761,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 3600,
+      "repeat": 0,
+      "first_assigned_symbol": 2880,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 3600,
+      "repeat": 1,
+      "first_assigned_symbol": 2881,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 3750,
+      "repeat": 0,
+      "first_assigned_symbol": 3001,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 3750,
+      "repeat": 1,
+      "first_assigned_symbol": 3000,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 3900,
+      "repeat": 0,
+      "first_assigned_symbol": 3120,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 3900,
+      "repeat": 1,
+      "first_assigned_symbol": 3121,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 4050,
+      "repeat": 0,
+      "first_assigned_symbol": 3240,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 4050,
+      "repeat": 1,
+      "first_assigned_symbol": 3240,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 4200,
+      "repeat": 0,
+      "first_assigned_symbol": 3360,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 4200,
+      "repeat": 1,
+      "first_assigned_symbol": 3360,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 4350,
+      "repeat": 0,
+      "first_assigned_symbol": 3480,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 4350,
+      "repeat": 1,
+      "first_assigned_symbol": 3481,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 4500,
+      "repeat": 0,
+      "first_assigned_symbol": 3601,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 4500,
+      "repeat": 1,
+      "first_assigned_symbol": 3600,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 4650,
+      "repeat": 0,
+      "first_assigned_symbol": 3720,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 4650,
+      "repeat": 1,
+      "first_assigned_symbol": 3720,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 4800,
+      "repeat": 0,
+      "first_assigned_symbol": 3841,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 4800,
+      "repeat": 1,
+      "first_assigned_symbol": 3840,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 4950,
+      "repeat": 0,
+      "first_assigned_symbol": 3961,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 4950,
+      "repeat": 1,
+      "first_assigned_symbol": 3961,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 5100,
+      "repeat": 0,
+      "first_assigned_symbol": 4080,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 5100,
+      "repeat": 1,
+      "first_assigned_symbol": 4080,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 5250,
+      "repeat": 0,
+      "first_assigned_symbol": 4200,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 5250,
+      "repeat": 1,
+      "first_assigned_symbol": 4200,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 5400,
+      "repeat": 0,
+      "first_assigned_symbol": 4320,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 5400,
+      "repeat": 1,
+      "first_assigned_symbol": 4320,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 5550,
+      "repeat": 0,
+      "first_assigned_symbol": 4440,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 5550,
+      "repeat": 1,
+      "first_assigned_symbol": 4440,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 5700,
+      "repeat": 0,
+      "first_assigned_symbol": 4560,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 5700,
+      "repeat": 1,
+      "first_assigned_symbol": 4560,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 5850,
+      "repeat": 0,
+      "first_assigned_symbol": 4681,
+      "decoded_symbols": 152
+    },
+    {
+      "offset_us": 5850,
+      "repeat": 1,
+      "first_assigned_symbol": 4680,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 6000,
+      "repeat": 0,
+      "first_assigned_symbol": 4800,
+      "decoded_symbols": 154
+    },
+    {
+      "offset_us": 6000,
+      "repeat": 1,
+      "first_assigned_symbol": 4800,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 6150,
+      "repeat": 0,
+      "first_assigned_symbol": 4920,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 6150,
+      "repeat": 1,
+      "first_assigned_symbol": 4920,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 6300,
+      "repeat": 0,
+      "first_assigned_symbol": 5041,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 6300,
+      "repeat": 1,
+      "first_assigned_symbol": 5040,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 6450,
+      "repeat": 0,
+      "first_assigned_symbol": 5160,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 6450,
+      "repeat": 1,
+      "first_assigned_symbol": 5160,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 6600,
+      "repeat": 0,
+      "first_assigned_symbol": 5280,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 6600,
+      "repeat": 1,
+      "first_assigned_symbol": 5280,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 6750,
+      "repeat": 0,
+      "first_assigned_symbol": 5400,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 6750,
+      "repeat": 1,
+      "first_assigned_symbol": 5400,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 6900,
+      "repeat": 0,
+      "first_assigned_symbol": 5520,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 6900,
+      "repeat": 1,
+      "first_assigned_symbol": 5520,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 7050,
+      "repeat": 0,
+      "first_assigned_symbol": 5640,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 7050,
+      "repeat": 1,
+      "first_assigned_symbol": 5640,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 7200,
+      "repeat": 0,
+      "first_assigned_symbol": 5760,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 7200,
+      "repeat": 1,
+      "first_assigned_symbol": 5760,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 7350,
+      "repeat": 0,
+      "first_assigned_symbol": 5880,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 7350,
+      "repeat": 1,
+      "first_assigned_symbol": 5880,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 7500,
+      "repeat": 0,
+      "first_assigned_symbol": 6000,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 7500,
+      "repeat": 1,
+      "first_assigned_symbol": 6000,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 7650,
+      "repeat": 0,
+      "first_assigned_symbol": 6120,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 7650,
+      "repeat": 1,
+      "first_assigned_symbol": 6120,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 7800,
+      "repeat": 0,
+      "first_assigned_symbol": 6240,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 7800,
+      "repeat": 1,
+      "first_assigned_symbol": 6240,
+      "decoded_symbols": 153
+    },
+    {
+      "offset_us": 7950,
+      "repeat": 0,
+      "first_assigned_symbol": 6360,
+      "decoded_symbols": 88
+    },
+    {
+      "offset_us": 7950,
+      "repeat": 1,
+      "first_assigned_symbol": 6360,
+      "decoded_symbols": 88
+    }
+  ]
+}

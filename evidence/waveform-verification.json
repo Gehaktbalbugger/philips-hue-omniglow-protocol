@@ -1,0 +1,60 @@
+{
+  "red": {
+    "symbols": 6448,
+    "period_cycles": {
+      "20": 6447
+    },
+    "high_cycles": {
+      "15": 1463,
+      "4": 4985
+    },
+    "compiled_output_matches_reconstruction": true,
+    "last_output_level": 0
+  },
+  "blue": {
+    "symbols": 6448,
+    "period_cycles": {
+      "20": 6447
+    },
+    "high_cycles": {
+      "4": 4665,
+      "15": 1783
+    },
+    "compiled_output_matches_reconstruction": true,
+    "last_output_level": 0
+  },
+  "zeros": {
+    "symbols": 6448,
+    "period_cycles": {
+      "20": 6447
+    },
+    "high_cycles": {
+      "4": 6448
+    },
+    "compiled_output_matches_reconstruction": true,
+    "last_output_level": 0
+  },
+  "ones": {
+    "symbols": 6448,
+    "period_cycles": {
+      "20": 6447
+    },
+    "high_cycles": {
+      "15": 6448
+    },
+    "compiled_output_matches_reconstruction": true,
+    "last_output_level": 0
+  },
+  "random": {
+    "symbols": 6448,
+    "period_cycles": {
+      "20": 6447
+    },
+    "high_cycles": {
+      "4": 3214,
+      "15": 3234
+    },
+    "compiled_output_matches_reconstruction": true,
+    "last_output_level": 0
+  }
+}

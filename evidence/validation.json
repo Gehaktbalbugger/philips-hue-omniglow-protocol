@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0-experimental",
+  "firmware": "firmware/omniglow_playground/omniglow_playground.ino",
+  "source_sha256": "fe4b67d8e28485d955eb168c543d377af2494c73b71df11682758bb9b8a06f7c",
+  "hex_sha256": "4879013de428abbfa5ab614cba083b721346ca969614bc9555fc9f7d60179a67",
+  "flash_readback_verified_bytes": 10316,
+  "static_sram_bytes": 1038,
+  "compiled_waveform_check": "fivepayloads,6448symbolsperframe,20cyclespersymbol,4/15cyclehighs",
+  "physical_observations": {
+    "solid_red_blue": "userconfirmed",
+    "independent_halves_and_swap": "userconfirmed",
+    "new_playground_effect_appearance": "notyetuserconfirmed",
+    "cut_piece": "untested",
+    "hue_bridge_pairing": "notimplemented"
+  },
+  "demo_replies": [
+    "DEMO begin",
+    "PHASE aurora curtains",
+    "PHASE twin comet dance",
+    "PHASE pond ripples",
+    "PHASE bouncing marbles",
+    "PHASE candy conveyor",
+    "PHASE firefly garden",
+    "PHASE sunrise wave",
+    "PHASE liquid plasma",
+    "DEMO done; D2 INPUT"
+  ],
+  "demo_duration_seconds": 55.161,
+  "demo_completed": true
+}
