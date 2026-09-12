@@ -140,6 +140,10 @@ A future single ESP32-C6 Zigbee prototype should be paired with a real Hue Bridg
 - [Philips Hue Zigbee interoperability](https://developers.meethue.com/zigbee-3-0-support-in-hue-ecosystem/): custom-device pairing remains a hardware test.
 - [Current full sketch](../firmware/omniglow_playground/omniglow_playground.ino) and [serial control tool](../tools/control.py).
 
+## Reproduction tools and current run evidence
+
+The [capture sketch](../firmware/omniglow_capture/omniglow_capture.ino), [fast reader](../tools/read_hue_capture.py) and [aligned reader](../tools/read_hue_aligned.py) are included separately from the effects firmware. The [all-show runner](../tools/play_all.py) and [completed run summary](../evidence/all-shows-run.json) cover the latest D/W/P/F sequence. These logs confirm firmware acknowledgements, not visual color calibration.
+
 
 # Volledige huidige Arduino-software
 

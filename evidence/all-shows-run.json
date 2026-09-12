@@ -1,0 +1,57 @@
+{
+  "status": "all four shows completed; D2 INPUT",
+  "order": [
+    "D",
+    "W",
+    "P",
+    "F"
+  ],
+  "shows": [
+    {
+      "command": "D",
+      "status": "DEMO done; D2 INPUT",
+      "duration_seconds": 26.676,
+      "phases": []
+    },
+    {
+      "command": "W",
+      "status": "DEMO done; D2 INPUT",
+      "duration_seconds": 29.434,
+      "phases": [
+        "PHASE white and warm channels",
+        "PHASE moving rainbow",
+        "PHASE soft comet",
+        "PHASE candle glow"
+      ]
+    },
+    {
+      "command": "P",
+      "status": "DEMO done; D2 INPUT",
+      "duration_seconds": 55.183,
+      "phases": [
+        "PHASE aurora curtains",
+        "PHASE twin comet dance",
+        "PHASE pond ripples",
+        "PHASE bouncing marbles",
+        "PHASE candy conveyor",
+        "PHASE firefly garden",
+        "PHASE sunrise wave",
+        "PHASE liquid plasma"
+      ]
+    },
+    {
+      "command": "F",
+      "status": "DEMO done; D2 INPUT",
+      "duration_seconds": 44.83,
+      "phases": [
+        "PHASE launch into the night",
+        "PHASE color blossoms",
+        "PHASE crossing rockets",
+        "PHASE golden willows",
+        "PHASE rainbow chrysanthemums",
+        "PHASE grand finale"
+      ]
+    }
+  ],
+  "interpretation": "Serial completion confirmed for all four shows. This log is not an independent visual measurement."
+}

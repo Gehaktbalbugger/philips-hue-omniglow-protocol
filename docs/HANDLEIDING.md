@@ -49,3 +49,7 @@ Het [complete document](COMPLETE_PROTOCOL_AND_SOFTWARE.md) bevat de protocolspec
 ## Volgende stap: twee lampen in Hue
 
 Eerst één klein Zigbee-bordje met aangepaste software daadwerkelijk aan een Hue Bridge koppelen. Test aan/uit, dimmen, kleuren, kleurtemperatuur en herstel na stroomuitval. Pas daarna een tweede exemplaar en een fysiek gesplitste strip proberen. Deze repository bevat nog geen werkende Zigbee-koppeling en bewijst niet dat een afgeknipt deel zelfstandig werkt.
+
+## Alle shows achter elkaar
+
+Gebruik `python tools/play_all.py --port YOUR_PORT`. Dit speelt kleuren, wit/warm, playground en vuurwerk achter elkaar af en wacht steeds tot de vorige show klaar is. Het duurt ongeveer drie minuten. Ctrl-C stopt de reeks.

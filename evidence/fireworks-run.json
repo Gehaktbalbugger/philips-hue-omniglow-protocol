@@ -1,0 +1,15 @@
+{
+  "status": "DEMO done; D2 INPUT",
+  "duration_seconds": 45.123,
+  "replies": [
+    "DEMO begin",
+    "PHASE launch into the night",
+    "PHASE color blossoms",
+    "PHASE crossing rockets",
+    "PHASE golden willows",
+    "PHASE rainbow chrysanthemums",
+    "PHASE grand finale",
+    "DEMO done; D2 INPUT"
+  ],
+  "interpretation": "Controller acknowledgements; not a visual observation."
+}

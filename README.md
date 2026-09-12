@@ -81,3 +81,22 @@ You can also upload the included [tested HEX](firmware/omniglow_playground/omnig
 **Does this require a laptop permanently?** The effects execute on the Arduino. This test firmware requires a serial start command after boot. A standalone startup policy and wireless control would be separate work.
 
 The `F` fireworks show uses24 simulated particles with sub-unit motion, local additive light and brightness normalization. It finishes with a warm afterglow. Run it with `python tools/control.py --port YOUR_PORT --command F`.
+
+## Play every show in sequence
+
+```sh
+python tools/play_all.py --port YOUR_PORT
+```
+
+This keeps one serial connection open and runs `D → W → P → F`, advancing only after each completion acknowledgement. Expect about three minutes. Ctrl-C cancels the playlist; alternatively create the file supplied by `--stop-file`. The [latest completed playlist log](evidence/all-shows-run.json) records every show's acknowledgement and duration.
+
+## Capture tools
+
+The separate [read-only acquisition sketch](firmware/omniglow_capture/omniglow_capture.ino) and [capture HEX](firmware/omniglow_capture/omniglow_capture.hex) preserve the measurement firmware used in this investigation. It replaces the effects sketch if uploaded. Its D2 pin only listens. It requires the original controller as the signal source and verified electrical levels; it does not drive the strip.
+
+```sh
+python tools/read_hue_capture.py --port YOUR_PORT --trigger --count 40 --output captures.json
+python tools/read_hue_aligned.py --port YOUR_PORT --output aligned.json
+```
+
+Only use these readers with the capture sketch, not the effects firmware. The aligned reader scans offsets through multiple separate transmissions; keep the controller color and brightness fixed. The supplied80-unit model is specific to the tested strip.
