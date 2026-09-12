@@ -30,6 +30,7 @@ The current playground firmware is [firmware/omniglow_playground/omniglow_playgr
 - `D` — run bounded smooth random colour transitions.
 - `W` — run the white-channel experiment.
 - `P` — run the eight-effect playground.
+- `F` — run the six-act particle-fireworks show: rockets, blossoms, crossing trails, golden willows, rainbow bursts and finale.
 - `X` — stop between frames and return D2 to `INPUT`.
 
 Send one command at a time after checking the wiring. Do not connect the original controller DATA line while using Arduino output.
@@ -78,3 +79,5 @@ You can also upload the included [tested HEX](firmware/omniglow_playground/omnig
 **Can a cut-off section become a second Hue lamp?** Not established here. Separate color zones on the intact strip work; electrical access to a cut section and independent Zigbee pairing remain untested.
 
 **Does this require a laptop permanently?** The effects execute on the Arduino. This test firmware requires a serial start command after boot. A standalone startup policy and wireless control would be separate work.
+
+The `F` fireworks show uses24 simulated particles with sub-unit motion, local additive light and brightness normalization. It finishes with a warm afterglow. Run it with `python tools/control.py --port YOUR_PORT --command F`.

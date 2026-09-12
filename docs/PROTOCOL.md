@@ -105,6 +105,7 @@ The public command summary is:
 | `D` | 12-stage smooth random-colour demo; each stage uses 101 interpolation steps and independent targets for the two 40-unit halves |
 | `W` | White-channel experiment |
 | `P` | Eight-effect playground |
+| `F` | Six-act particle-fireworks show with rockets, colorful bursts, golden trails and a finale. |
 | `X` | Stop between frames and release D2 to input |
 
 The `D` demo checks for `X` between frames. The signal output itself remains interrupt-free for the fixed 8.06 ms frame, then the serial stop check runs during the low interval. A command is not an authorization to connect the original controller DATA line; that physical isolation must be completed first.

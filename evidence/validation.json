@@ -1,10 +1,10 @@
 {
-  "version": "0.1.0-experimental",
+  "version": "0.2.0-experimental",
   "firmware": "firmware/omniglow_playground/omniglow_playground.ino",
-  "source_sha256": "fe4b67d8e28485d955eb168c543d377af2494c73b71df11682758bb9b8a06f7c",
-  "hex_sha256": "4879013de428abbfa5ab614cba083b721346ca969614bc9555fc9f7d60179a67",
-  "flash_readback_verified_bytes": 10316,
-  "static_sram_bytes": 1038,
+  "source_sha256": "bb60bc8b8a0e4c090047fb5f3979c365e89e72d86f67456d8c35f7e11a9f4f4d",
+  "hex_sha256": "44751308d86152f929a90314a2f2eaaa4ac21fd98b2237b5b9630ee84a589365",
+  "flash_readback_verified_bytes": 12674,
+  "static_sram_bytes": 1309,
   "compiled_waveform_check": "fivepayloads,6448symbolsperframe,20cyclespersymbol,4/15cyclehighs",
   "physical_observations": {
     "solid_red_blue": "userconfirmed",
@@ -13,7 +13,8 @@
     "cut_piece": "untested",
     "hue_bridge_pairing": "notimplemented"
   },
-  "demo_replies": [
+  "fireworks_status": "Compiled waveform checks passed and upload readback verified; physical visual quality notyetconfirmed",
+  "previous_playground_demo_replies": [
     "DEMO begin",
     "PHASE aurora curtains",
     "PHASE twin comet dance",
@@ -25,6 +26,5 @@
     "PHASE liquid plasma",
     "DEMO done; D2 INPUT"
   ],
-  "demo_duration_seconds": 55.161,
-  "demo_completed": true
+  "previous_playground_duration_seconds": 55.161
 }

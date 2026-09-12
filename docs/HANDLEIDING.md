@@ -27,6 +27,7 @@ De huidige werkweergave behandelt de eerste 800 bytes als 80 herhaalde eenheden 
 | `D` | Start 12 overgangen met vloeiende willekeurige kleuren. Beide helften krijgen afzonderlijk een doelkleur. |
 | `W` | Start de test voor witte kanalen. |
 | `P` | Start de playground met acht effecten. |
+| `F` | Six-act particle-fireworks show with rockets, colorful bursts, golden trails and a finale. |
 | `X` | Stop tussen twee frames en zet D2 terug op `INPUT`. |
 
 Stuur één hoofdletter per keer via de seriële monitor. Tijdens een effect wordt `X` tussen frames gecontroleerd. Na een normale afronding of na `X` wordt D2 eerst laag gezet en daarna vrijgegeven als `INPUT`.

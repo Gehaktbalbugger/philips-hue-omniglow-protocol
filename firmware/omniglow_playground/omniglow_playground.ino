@@ -375,5 +375,114 @@ static void playground(){
  if(!fadeTo(rest,65))return;
  digitalWrite(2,LOW);pinMode(2,INPUT);Serial.println(F("DEMO done; D2 INPUT"));
 }
-void setup(){pinMode(2,INPUT);digitalWrite(2,LOW);Serial.begin(115200);randomSeed(micros());Serial.println(F("OMNIGLOW_PLAYGROUND INPUT; D=colors W=white P=play X=stop"));}
-void loop(){if(Serial.available()){int c=Serial.read();if(c=='D'||c=='W'||c=='P'){Serial.println(F("DEMO begin"));Serial.flush();if(c=='P')playground();else if(c=='W')whiteFunky();else demo();}}}
+
+// Small particle system. Positions/velocities use Q8 units; all light is local.
+struct Spark{int16_t pos,vel;uint16_t hue,power;uint8_t age,life,kind;};
+static Spark sparks[24];
+static uint8_t sparkCursor=0;
+static void addLight(int16_t unit,const uint16_t color[5],uint16_t weight){
+ if(unit<0||unit>=80)return;
+ for(uint8_t c=0;c<5;c++){
+  uint16_t offset=uint16_t(unit)*10+c*2;
+  uint16_t old=(uint16_t(packet[offset])<<8)|packet[offset+1];
+  uint32_t mixed=old+uint32_t(color[c])*weight/256;
+  if(mixed>50000)mixed=50000;
+  packet[offset]=mixed>>8;packet[offset+1]=mixed&255;
+ }
+}
+static void plotLight(int16_t pos,uint16_t hue,uint16_t gain,uint8_t kind){
+ uint16_t color[5];
+ if(kind==1){memset(color,0,sizeof(color));color[0]=gain*3UL/4;color[1]=gain/4;color[3]=gain/8;}
+ else wheel(hue,gain,color);
+ const int16_t u=pos>=0?pos/256:-1;
+ if(pos<0)return;
+ const uint16_t fraction=pos&255;
+ addLight(u,color,256-fraction);addLight(u+1,color,fraction);
+}
+static void spawnBurst(uint8_t center,uint16_t hue,uint8_t count,uint8_t kind){
+ for(uint8_t n=0;n<count;n++){
+  Spark &p=sparks[sparkCursor];sparkCursor=(sparkCursor+1)%24;
+  p.pos=int16_t(center)*256;p.vel=random(-640,641);
+  if(abs(p.vel)<80)p.vel=p.vel<0?-100:100;
+  p.hue=(hue+n*29)%768;p.power=random(11000,23000);
+  p.age=0;p.life=random(55,105);p.kind=kind;
+ }
+}
+static void renderSparks(){
+ for(uint8_t n=0;n<24;n++){
+  Spark &p=sparks[n];if(!p.life||p.age>=p.life)continue;
+  uint16_t left=p.life-p.age;
+  uint16_t light=uint32_t(p.power)*left/p.life;
+  light=uint32_t(light)*left/p.life;
+  if(p.age<3)light=uint32_t(light)*(p.age+1)/3;
+  plotLight(p.pos,p.hue,light,p.kind);
+  plotLight(p.pos-p.vel/2,p.hue,light/3,p.kind);
+  p.pos+=p.vel;p.vel=int32_t(p.vel)*250/256;
+  if(p.kind==1)p.vel+=6;
+  p.age++;
+  if(p.pos<0||p.pos>79*256)p.life=0;
+ }
+}
+static void rocket(uint16_t phase,uint8_t center,uint16_t hue,bool reverse){
+ if(phase>=26)return;
+ int16_t start=reverse?79*256:0,target=int16_t(center)*256;
+ int16_t pos=start+int32_t(target-start)*phase/25;
+ plotLight(pos,hue,22000,1);
+ int16_t direction=reverse?1:-1;
+ plotLight(pos+direction*256,hue,9000,1);
+ plotLight(pos+direction*512,hue,3500,1);
+}
+static void fireworks(){
+ digitalWrite(2,LOW);pinMode(2,OUTPUT);memset(sparks,0,sizeof(sparks));
+ sparkCursor=0;memcpy(packet+800,footer,6);packet[806]=0;
+ for(uint8_t act=0;act<6;act++){
+  switch(act){
+   case 0:Serial.println(F("PHASE launch into the night"));break;
+   case 1:Serial.println(F("PHASE color blossoms"));break;
+   case 2:Serial.println(F("PHASE crossing rockets"));break;
+   case 3:Serial.println(F("PHASE golden willows"));break;
+   case 4:Serial.println(F("PHASE rainbow chrysanthemums"));break;
+   default:Serial.println(F("PHASE grand finale"));break;
+  }
+  Serial.flush();
+  const uint16_t period=act==5?48:act==0?100:act==2?80:70;
+  for(uint16_t f=0;f<240;f++){
+   memset(packet,0,800);
+   uint16_t phase=f%period,shot=f/period;
+   uint8_t center=20+(shot*23+act*11)%40;
+   uint16_t hue=(act*113+shot*197)%768;
+   rocket(phase,center,hue,(shot+act)%2);
+   if(phase==26)spawnBurst(center,hue,act==0?12:18,act==3?1:0);
+   if(act==2||act==5){
+    uint16_t second=(f+period/2)%period;
+    rocket(second,79-center,(hue+384)%768,!((shot+act)%2));
+    if(second==26)spawnBurst(79-center,(hue+384)%768,12,0);
+   }
+   if(act==3 && f%14==0){
+    spawnBurst(random(10,68),70,3,1);
+   }
+   if(act==4 && phase==42)spawnBurst(center,(hue+256)%768,8,0);
+   renderSparks();
+   // Normalize overlap; fade show opening/ending without a full-strip flash.
+   uint16_t master=256;
+   if(act==0&&f<22)master=uint32_t(f)*256/22;
+   if(act==5&&f>208)master=uint32_t(239-f)*256/31;
+   for(uint8_t u=0;u<80;u++){
+    uint16_t color[5];uint32_t total=0;
+    for(uint8_t c=0;c<5;c++){uint16_t k=uint16_t(u)*10+c*2;color[c]=(uint16_t(packet[k])<<8)|packet[k+1];total+=color[c];}
+    for(uint8_t c=0;c<5;c++){
+     if(total>28000)color[c]=uint32_t(color[c])*28000/total;
+     color[c]=uint32_t(color[c])*master/256;
+    }
+    unitColor(u,color);
+   }
+   sendPacket();delay(13);if(stopped())return;
+  }
+ }
+ memset(current,0,sizeof(current));uint16_t rest[2][5]={{0}};
+ rest[0][0]=1500;rest[0][1]=300;rest[0][3]=11000;
+ memcpy(rest[1],rest[0],10);if(!fadeTo(rest,80))return;
+ digitalWrite(2,LOW);pinMode(2,INPUT);Serial.println(F("DEMO done; D2 INPUT"));
+}
+void setup(){pinMode(2,INPUT);digitalWrite(2,LOW);Serial.begin(115200);randomSeed(micros());Serial.println(F("OMNIGLOW_PLAYGROUND INPUT; D=colors W=white P=play F=fireworks X=stop"));}
+void loop(){if(Serial.available()){int c=Serial.read();if(c=='D'||c=='W'||c=='P'||c=='F'){Serial.println(F("DEMO begin"));Serial.flush();if(c=='F')fireworks();else if(c=='P')playground();else if(c=='W')whiteFunky();else demo();}}}
